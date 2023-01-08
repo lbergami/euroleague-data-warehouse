@@ -11,7 +11,7 @@ lkpSeasons = init_euroleague_season_list.lkpSeasons
 
 
 # Set out the extraction function for box score data 
-def extract_box_scores(lkpSeason_arg):
+def extract_box_scores_f(lkpSeason_arg):
     
     # Create empty lists for output
     list_box_scores = []
@@ -87,7 +87,7 @@ def extract_box_scores(lkpSeason_arg):
     return list_box_scores, list_not_valid_game_id, list_failed_requests
  
 # Call the func and extract the dataset with pbp 
-list_box_scores_games =  extract_box_scores(lkpSeason_arg = lkpSeasons)
+list_box_scores_games =  extract_box_scores_f(lkpSeason_arg = lkpSeasons)
 
 # Create the dataset with box scores data 
 dfBoxScores =  pd.concat(list_box_scores_games[0])
