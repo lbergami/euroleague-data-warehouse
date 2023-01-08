@@ -11,7 +11,7 @@ lkpSeasons = init_euroleague_season_list.lkpSeasons
 
 
 # Set out the extraction function for shots data 
-def extract_shots(lkpSeason_arg):
+def extract_shots_f(lkpSeason_arg):
     
     # Create empty lists for output
     list_shots = []
@@ -79,7 +79,7 @@ def extract_shots(lkpSeason_arg):
     return list_shots, list_not_valid_game_id, list_failed_requests
  
 # Call the func and extract the dataset with pbp 
-list_shots_games =  extract_shots(lkpSeason_arg = lkpSeasons)
+list_shots_games =  extract_shots_f(lkpSeason_arg = lkpSeasons)
 
 # Create the dataset with play-by-play data 
 dfShots =  pd.concat(list_shots_games[0])
