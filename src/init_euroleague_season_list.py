@@ -126,9 +126,9 @@ lkpSeason21 = pd.DataFrame(
 
 # Season 2022-23
 lkpSeason22 = pd.DataFrame(
-            {'game_id': list(range(1, 36)),
-             'year_id': ['2022'] * 35, 
-             'season_id': ['2022-23'] * 35
+            {'game_id': list(range(1, 73)),
+             'year_id': ['2022'] * 72, 
+             'season_id': ['2022-23'] * 72
             }
         )
 
