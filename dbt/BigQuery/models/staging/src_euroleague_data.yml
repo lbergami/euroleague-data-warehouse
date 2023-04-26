@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: euroleague_data
+    database: drazen
+    schema: euroleague_data
+    tables:
+      - name: play_by_play_data
+      - name: shots_data
+      - name: box_scores_data

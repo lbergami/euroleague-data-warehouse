@@ -1,0 +1,1 @@
+select * from  `drazen.euroleague_data.box_scores_data`

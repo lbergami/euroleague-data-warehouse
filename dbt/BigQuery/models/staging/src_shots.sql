@@ -1,0 +1,1 @@
+select * from  `drazen.euroleague_data.shots_data`
