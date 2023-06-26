@@ -9,24 +9,24 @@ source as (
 renamed as (
 
     select
-        codeteam,
-        player_id,
-        playtype,
-        player,
-        team,
-        dorsal,
-        minute,
-        markertime,
-        points_home,
-        points_away,
-        playinfo,
-        game_period,
-        game_id,
         season,
-        markertime_seconds,
+        game_id,
+        lower(trim(player_id)) as player_id,
+        lower(trim(player)) as player_name,
+        dorsal,
+        lower(trim(codeteam)) as team_code,
+        lower(trim(team)) as team,
         game_play_id,
-        shot_clock
-
+        lower(trim(playinfo)) as playinfo,
+        lower(trim(playtype)) as playtype,
+        cast(minute as numeric) as minute,
+        markertime,
+        markertime_seconds,
+        game_period,
+        shot_clock,
+        cast(points_home as numeric) as points_home,
+        cast(points_away as numeric) as points_away 
+    
     from source
 
 )
