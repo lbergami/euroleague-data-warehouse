@@ -27,7 +27,7 @@ renamed as (
         cast(freethrowsattempted as numeric) as free_throws_attempted,
         cast(offensiverebounds as numeric) offensive_rebounds,
         cast(defensiverebounds as numeric) as defensive_rebounds,
-        cast(totalrebounds as numeric) as totalre_bounds,
+        cast(totalrebounds as numeric) as total_rebounds,
         cast(assistances as numeric) as assists,
         cast(steals as numeric) as steals,
         cast(turnovers as numeric) as turnovers,
