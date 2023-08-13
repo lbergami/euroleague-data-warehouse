@@ -41,7 +41,7 @@ games_and_team_full_names_home as (
 
 ), 
 
-games_and_team_full_names_away as (
+games_and_team_full_names_away as(
 
     select 
         distinct
