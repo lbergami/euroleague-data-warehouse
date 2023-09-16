@@ -9,8 +9,8 @@ source as (
 renamed as (
 
     select
-        cast(box_scores_id, as numeric) as box_scores_id,  
-        cast(concat('20', right(season, 2)) asnumeric) as season,
+        box_scores_id, 
+        cast(concat('20', right(season, 2)) as numeric) as season,
         game_id,
         lower(trim(team)) as team_code,
         flaghometeam as flag_home_team,

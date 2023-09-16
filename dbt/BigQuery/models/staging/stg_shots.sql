@@ -10,7 +10,7 @@ renamed as (
 
     select
         cast(shot_id as numeric) as shot_id, 
-        cast(concat('20', right(season, 2)) asnumeric) as season,
+        cast(concat('20', right(season, 2)) as integer) as season,
         cast(game_id as numeric) as game_id,
         lower(trim(team)) as team, 
         lower(trim(id_player)) as player_id,
