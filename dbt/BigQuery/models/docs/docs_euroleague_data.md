@@ -1,4 +1,4 @@
-# Euroleage data documentationgame_id
+# Euroleage data documentation
 
 This file contains docs blocks for the three staging tables
 
