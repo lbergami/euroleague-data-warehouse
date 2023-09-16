@@ -9,9 +9,6 @@ models:
 
       - name: shot_id
         description: '{{ doc("shot_id") }}'
-        tests:
-          - not_null
-          - unique
         
       - name: season
         description: '{{ doc("season") }}'

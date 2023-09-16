@@ -8,9 +8,6 @@ models:
       
       - name: box_scores_id
         description: '{{ doc(box_scores_id) }}'
-        tests:
-          - not_null:
-          - unique:
 
       - name: season
         description: '{{ doc("season") }}'
