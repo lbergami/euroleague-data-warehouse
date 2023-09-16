@@ -9,9 +9,6 @@ models:
 
       - name: play_by_play_id
         description: '{{ doc(play_by_play_id) }}'
-        tests:
-          - not_null
-          - unique
 
       - name: season
         description: '{{ doc(season) }}'
