@@ -122,7 +122,7 @@ Player's valuation of the game
 
 This section contains documentation from the Play-by-play table.
 
-{% docs play_by_play_id}
+{% docs play_by_play_id %}
 Unique identifier of the play by play instance  
 {% enddocs %}
 
