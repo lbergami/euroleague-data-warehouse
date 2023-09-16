@@ -15,6 +15,18 @@ games_and_home_team_code as (
     
 ), 
 
+games_and_home_team_score as (
+
+    select
+        season, 
+        game_id, 
+        sum(points) as home_team_score 
+    from {{ ref('stg_box_scores') }}
+    group by season, game_id, flag_home_team
+    having flag_home_team = TRUE
+
+),
+
 games_and_away_team_code as (
 
     select 
@@ -26,6 +38,18 @@ games_and_away_team_code as (
     where flag_home_team = FALSE
     
 ), 
+
+games_and_away_team_score as (
+
+    select
+        season, 
+        game_id, 
+        sum(points) as away_team_score 
+    from {{ ref('stg_box_scores') }}
+    group by season, game_id, flag_home_team
+    having flag_home_team = FALSE
+
+),
 
 games_and_team_full_names_home as (
 
@@ -41,7 +65,7 @@ games_and_team_full_names_home as (
 
 ), 
 
-games_and_team_full_names_away as (
+games_and_team_full_names_away as(
 
     select 
         distinct
@@ -61,6 +85,9 @@ select
     /* Full team names */
     hn.home_team,
     an.away_team, 
+    /* Full time score */
+    hts.home_team_score,
+    ats.away_team_score,
     /* Team codes */
     htc.home_team_code, 
     atc.away_team_code 
@@ -72,6 +99,11 @@ left join games_and_team_full_names_home as hn
     on htc.season = hn.season and htc.game_id = hn.game_id and htc.home_team_code = hn.home_team_code
 left join games_and_team_full_names_away as an
     on htc.season = an.season and htc.game_id = an.game_id and atc.away_team_code = an.away_team_code
+/* Join home/away team score */
+left join games_and_home_team_score as hts
+    on htc.season = hts.season and htc.game_id = hts.game_id 
+left join games_and_away_team_score as ats
+    on htc.season = ats.season and htc.game_id = ats.game_id 
 order by season, game_id 
 
 

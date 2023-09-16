@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: stg_box_scores
+    description: Description box scores table
+
+  - name: stg_play_by_play
+    description: Description play-by-play data 
+
+  - name: stg_shots
+    description: Description shots data

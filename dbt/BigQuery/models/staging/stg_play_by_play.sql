@@ -9,7 +9,8 @@ source as (
 renamed as (
 
     select
-        season,
+        play_by_play_id, 
+        cast(concat('20', right(season, 2)) asnumeric) as season,
         game_id,
         lower(trim(player_id)) as player_id,
         lower(trim(player)) as player_name,
