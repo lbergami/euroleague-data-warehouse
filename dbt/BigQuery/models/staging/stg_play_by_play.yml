@@ -1,0 +1,65 @@
+version: 2
+
+models:
+
+  - name: stg_play_by_play
+    description: This table contains information about play-by-play events for each game.
+    
+    columns:
+
+      - name: play_by_play_id
+        description: '{{ doc(play_by_play_id) }}'
+        tests:
+          - not_null
+          - unique
+
+      - name: season
+        description: '{{ doc(season) }}'
+
+      - name: game_id
+        description: '{{ doc(game_id) }}'
+
+      - name: player_id
+        description: '{{ doc(player_id) }}'
+
+      - name: player_name
+        description: '{{ doc(player_name) }}'
+
+      - name: dorsal
+        description: '{{ doc(dorsal) }}'
+
+      - name: team_code
+        description: '{{ doc(team_code) }}'
+
+      - name: team
+        description: '{{ doc(team) }}'
+
+      - name: game_play_id
+        description: '{{ doc(game_play_id) }}'
+
+      - name: playinfo
+        description: '{{ doc(playinfo) }}'
+
+      - name: playtype
+        description: '{{ doc(playtype) }}'
+
+      - name: minute
+        description: '{{ doc(minute) }}'
+
+      - name: markertime
+        description: '{{ doc(markertime) }}'
+
+      - name: markertime_seconds
+        description: '{{ doc(markertime_seconds) }}'
+
+      - name: game_period
+        description: '{{ doc(game_period) }}'
+
+      - name: shot_clock
+        description: '{{ doc(shot_clock) }}'
+
+      - name: points_home
+        description: '{{ doc(points_home) }}'
+
+      - name: points_away
+        description: '{{ doc(points_away) }}'
