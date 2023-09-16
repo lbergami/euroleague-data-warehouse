@@ -9,12 +9,13 @@ source as (
 renamed as (
 
     select
-        season, 
+        cast(shot_id as numeric) as shot_id, 
+        cast(concat('20', right(season, 2)) asnumeric) as season,
         cast(game_id as numeric) as game_id,
         lower(trim(team)) as team, 
         lower(trim(id_player)) as player_id,
         lower(trim(player)) as player_name,
-        cast(num_anot as numeric) as shot_id,
+        cast(num_anot as numeric) as shot_game_id,
         lower(trim(action)) as action,
         lower(trim(id_action)) as action_type,
         cast(points as numeric) as points,
