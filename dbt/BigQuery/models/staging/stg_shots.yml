@@ -8,58 +8,27 @@ models:
     columns:
 
       - name: shot_id
-        description: '{{ doc("shot_id") }}'
+        description: abc
         
       - name: season
-        description: '{{ doc("season") }}'
+        description: abc
 
       - name: game_id
-        description: '{{ doc("game_id") }}'
+        description: abc
 
       - name: team
-        description: '{{ doc("team") }}'
+        description: abc
 
       - name: player_id
-        description: '{{ doc("player_id") }}'
+        description: abc
 
       - name: player_name
-        description: '{{ doc("player_name") }}'
+        description: abc
 
       - name: action
-        description: '{{ doc("action") }}'
+        description: abc
 
       - name: action_type
-        description: '{{ doc("action_type") }}'
+        description: abc
 
-      - name: points
-        description: '{{ doc("shot_points") }}'
-
-      - name: coord_x
-        description: '{{ doc("coord_x") }}'
-
-      - name: coord_y
-        description: '{{ doc("coord_y") }}'
-
-      - name: zone
-        description: '{{ doc("zone") }}'
-
-      - name: fastbreak
-        description: '{{ doc("fastbreak") }}'
-
-      - name: second_chance
-        description: '{{ doc("second_chance") }}'
-
-      - name: points_off_turnover
-        description: '{{ doc("points_off_turnover") }}'
-
-      - name: minute
-        description: '{{ doc("minute") }}'
-
-      - name: console
-        description: '{{ doc("console") }}'
-
-      - name: points_home
-        description: '{{ doc("points_home") }}'
-
-      - name: points_away
-        description: '{{ doc("points_away") }}'
+  
