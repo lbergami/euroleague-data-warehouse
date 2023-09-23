@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: int_efg
+  - name: int_eFG
     description: Intermediate table creating home and away team effective goal percentages, per game 
     columns:
       - name: season
