@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: int_2p_shooting_zones
+    description: ""
+    columns:
+      - name: season
+        description: '{{ doc("season") }}'
+
+      - name: game_id
+        description: '{{ doc("game_id") }}'
+
+      - name: shot_id
+        description: '{{ doc("shot_id") }}'
+
+      - name: team_code
+        description: '{{ doc("team_code") }}'
+
+      - name: shot_zone
+        description: '{{ doc("shot_zone") }}'
+
+      - name: shot_zone_agg
+        description: '{{ doc("shot_zone_agg") }}'
+
+      - name: made_shot
+        description: '{{ doc("made_shot") }}'

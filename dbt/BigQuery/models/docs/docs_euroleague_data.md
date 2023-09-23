@@ -331,20 +331,18 @@ Team's percentage of made shots by shoot zone, per game
 Numeric indicator to order the shoot_zone_label
 {% enddocs %}
 
+{% docs shot_type %}
+Type of the shot taken, harmonizing different definitions provided by the euroleague website over the years
+{% enddocs %}
 
+{% docs made_shot %}
+Flag indicator which takes 1 if the shot was made, 0 otherwise 
+{% enddocs %}
 
+{% docs shot_zone %}
+Area of the shot, based on the two coordinates.
+{% enddocs %}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+{% docs shot_zone_agg %}
+Less granular definition of shot_zone, dropping left/right distinction  
+{% enddocs %}
