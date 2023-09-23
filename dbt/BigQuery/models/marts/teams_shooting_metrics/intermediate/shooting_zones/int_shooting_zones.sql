@@ -20,7 +20,7 @@ three_points_shots as (
         season, 
         game_id, 
         shot_id, 
-        team, 
+        team_code, 
         shot_zone, 
         shot_zone_agg, 
         made_shot

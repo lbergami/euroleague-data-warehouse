@@ -9,7 +9,7 @@ two_points_shots_raw as (
         season, 
         game_id,
         shot_id,
-        team,
+        team_code,
         made_shot,   
         coord_x, 
         coord_y
@@ -25,7 +25,7 @@ additional_two_points_shots as (
         season, 
         game_id,
         shot_id,
-        team,
+        team_code,
         made_shot,   
         coord_x, 
         coord_y
@@ -51,7 +51,7 @@ two_points_shots_zones as (
         season, 
         game_id, 
         shot_id, 
-        team, 
+        team_code, 
         made_shot,   
         case
         /* Shot outside the paint */ 
@@ -91,7 +91,7 @@ select
     sz.season, 
     sz.game_id, 
     sz.shot_id, 
-    sz.team, 
+    sz.team_code, 
     sz.shot_zone, 
     sza.shot_zone_agg, 
     sz.made_shot  

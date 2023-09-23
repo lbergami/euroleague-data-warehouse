@@ -10,8 +10,8 @@ models:
       - name: game_id
         description: '{{ doc("game_id") }}'
 
-      - name: team
-        description: '{{ doc("team") }}'
+      - name: team_code
+        description: '{{ doc("team_code") }}'
 
       - name: flag_home_team
         description: '{{ doc("flag_home_team") }}'
