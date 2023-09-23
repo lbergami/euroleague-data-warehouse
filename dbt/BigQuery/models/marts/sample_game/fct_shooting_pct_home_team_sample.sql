@@ -16,7 +16,7 @@ source_table as (
             when team = 'mun' then 'Fc Bayern Munich'
         end as home_team 
     from {{ ref('fct_shooting_pct') }}
-    where season = 2022 and (game_id = 1 or game_id = 2 or game_id = 3 or game_id = 4) and flag_team_home = 1  
+    where season = 2022 and (game_id = 1 or game_id = 2 or game_id = 3 or game_id = 4) and flag_home_team = 1  
 ) 
 
 select *

@@ -13,5 +13,5 @@ models:
       - name: team
         description: '{{ doc("team") }}'
 
-      - name: flag_team_home
-        description: '{{ doc("flag_team_home") }}'
+      - name: flag_home_team
+        description: '{{ doc("flag_home_team") }}'

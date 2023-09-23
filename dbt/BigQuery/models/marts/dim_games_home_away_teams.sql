@@ -12,7 +12,7 @@ home_away_teams as (
         case
             when label = 'home_team_code' then 1
             when label = 'away_team_code' then 0
-        end as flag_team_home 
+        end as flag_home_team 
     from (select
             season, 
             game_id, 

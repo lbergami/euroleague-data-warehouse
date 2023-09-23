@@ -31,7 +31,7 @@ select
     oai.fastbreak, 
     oai.second_chance, 
     oai.points_off_turnover, 
-    hwt.flag_team_home
+    hwt.flag_home_team
 from  offensive_action_indicators as oai
 left join home_away_teams as hwt
     on oai.season = hwt.season and oai.game_id = hwt.game_id and oai.team = hwt.team
