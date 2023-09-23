@@ -8,7 +8,7 @@ home_away_teams as (
     select   
         season, 
         game_id, 
-        team,
+        team_code,
         case
             when label = 'home_team_code' then 1
             when label = 'away_team_code' then 0
@@ -19,7 +19,7 @@ home_away_teams as (
             home_team_code, 
             away_team_code
           from {{ ref('dim_games_and_teams') }})
-          UNPIVOT(team FOR label IN (home_team_code, away_team_code))
+          UNPIVOT(team_code FOR label IN (home_team_code, away_team_code))
 
 ) 
 

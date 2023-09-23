@@ -10,7 +10,7 @@ selected_variables_shots as (
         season, 
         game_id, 
         shot_id, 
-        team, 
+        team_code, 
         action, 
         action_type,
         points, 
@@ -36,14 +36,7 @@ selected_variables_shots as (
 
 ), 
 
-/* Import the dim with the clean version of the shot Id */
-clean_shot_id as (
-
-    select *
-    from {{ ref('int_shot_id_update') }}
-
-),
-
+/* Rescale shot locations coordinats based on dashboard court size */ 
 rescaled_shot_locations as (
 
     select 
@@ -56,6 +49,7 @@ rescaled_shot_locations as (
   
 ), 
 
+/* Group different type of shots in less granular categories */ 
 harmonized_shot_type as (
 
     select
@@ -94,8 +88,8 @@ made_shots as (
 select
     svs.season, 
     svs.game_id, 
-    csi.shot_id_new as shot_id, 
-    svs.team, 
+    svs.shot_id, 
+    svs.team_code, 
     rsl.coord_x, 
     rsl.coord_y, 
     case 
@@ -115,10 +109,7 @@ left join harmonized_shot_type as hst
     on svs.season = hst.season and svs.game_id = hst.game_id and svs.shot_id = hst.shot_id
 /* Join made shots */
 left join made_shots as ms
-    on svs.season = ms.season and svs.game_id = ms.game_id and svs.shot_id = ms.shot_id
-/* Join dim with clean shot id */
-left join clean_shot_id as csi
-    on svs.season = csi.season and svs.game_id = csi.game_id and svs.shot_id = csi.shot_id    
+    on svs.season = ms.season and svs.game_id = ms.game_id and svs.shot_id = ms.shot_id 
 order by season, game_id, shot_id    
 
 

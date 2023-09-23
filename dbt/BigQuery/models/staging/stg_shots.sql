@@ -12,7 +12,7 @@ renamed as (
         cast(shot_id as numeric) as shot_id, 
         cast(concat('20', right(season, 2)) as integer) as season,
         cast(game_id as numeric) as game_id,
-        lower(trim(team)) as team, 
+        lower(trim(team)) as team_code, 
         lower(trim(id_player)) as player_id,
         lower(trim(player)) as player_name,
         cast(num_anot as numeric) as shot_game_id,

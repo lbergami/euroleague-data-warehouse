@@ -12,7 +12,7 @@ three_points_shots as (
         season, 
         game_id,
         shot_id, 
-        team,
+        team_code,
         made_shot, 
         coord_x, 
         coord_y
@@ -29,7 +29,7 @@ three_points_shots_zones as (
         shot_id,  
         coord_x, 
         coord_y,
-        team,  
+        team_code,  
         made_shot,
         case
             when coord_x < -6.5 and coord_y <= 3 then 'l_corner_3p'
@@ -60,7 +60,7 @@ three_points_shots_zones_agg as (
 select 
     sz.season, 
     sz.game_id, 
-    sz.team,  
+    sz.team_code,  
     sz.shot_id,
     sz.coord_x, 
     sz.coord_y,
