@@ -9,4 +9,4 @@ source_table as (
 ) 
 select * 
 from source_table
-where team = 'mad' or team = 'mil' or team = 'zal' or team = 'ulk'
+where team_code = 'mad' or team_code = 'mil' or team_code = 'zal' or team_code = 'ulk'

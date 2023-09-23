@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: int_shot_locations
+    description: ""
+    columns:
+      - name: season
+        description: '{{ doc("season") }}'
+
+      - name: game_id
+        description: '{{ doc("game_id") }}'
+
+      - name: shot_id
+        description: '{{ doc("shot_id") }}'
+
+      - name: team_code
+        description: '{{ doc("team_code") }}'
+
+      - name: coord_x
+        description: '{{ doc("coord_x") }}'
+
+      - name: coord_y
+        description: '{{ doc("coord_y") }}'
+
+      - name: shot_type
+        description: '{{ doc("shot_type") }}'
+
+      - name: made_shot
+        description: '{{ doc("made_shot") }}'
+
+      - name: fastbreak
+        description: '{{ doc("fastbreak") }}'
+
+      - name: second_chance
+        description: '{{ doc("second_chance") }}'
+
+      - name: points_off_turnover
+        description: '{{ doc("points_off_turnover") }}'

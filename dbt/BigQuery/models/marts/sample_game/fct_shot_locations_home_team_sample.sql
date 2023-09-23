@@ -10,15 +10,15 @@ source_table as (
 select 
     season, 
     game_id, 
-    team, 
+    team_code, 
     coord_x, 
     coord_y, 
     made_shot, 
     case 
-        when team = 'pan' then 'Panathinaikos Athens'
-        when team = 'asv' then 'Ldlc Asvel Villeurbanne'
-        when team = 'tel' then 'Maccabi Playtika Tel Aviv'
-        when team = 'mun' then 'Fc Bayern Munich'
-    end as home_team 
+        when team_code = 'pan' then 'Panathinaikos Athens'
+        when team_code = 'asv' then 'Ldlc Asvel Villeurbanne'
+        when team_code = 'tel' then 'Maccabi Playtika Tel Aviv'
+        when team_code = 'mun' then 'Fc Bayern Munich'
+    end as home_team_code 
 from source_table
-where team = 'pan' or team = 'asv' or team = 'tel' or team = 'mun' 
+where team_code = 'pan' or team_code = 'asv' or team_code = 'tel' or team_code = 'mun' 
