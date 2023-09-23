@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: int_possessions
+    description: Intermediate table creating home and away team number of possessions, per game 
+    columns:
+      - name: season
+        description: '{{ doc("season") }}'
+
+      - name: game_id
+        description: '{{ doc("game_id") }}'
+
+      - name: home_possession
+        description: '{{ doc("home_possession") }}'
+
+      - name: away_possession
+        description: '{{ doc("away_possession") }}'

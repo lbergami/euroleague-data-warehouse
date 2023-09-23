@@ -1,0 +1,66 @@
+
+version: 2
+
+models:
+  - name: fct_game_factors
+    description: Table reporting home and away team main factors by game. Table granularity is by season and game id (home and away teams reported in the wide format)  
+    columns:
+      - name: season
+        description: '{{ doc("season") }}'
+
+      - name: game_id
+        description: '{{ doc("game_id") }}'
+
+      - name: home_team
+        description: '{{ doc("home_team") }}'
+
+      - name: away_team
+        description: '{{ doc("away_team") }}'
+
+      - name: home_team_code
+        description: '{{ doc("home_team_code") }}'
+
+      - name: away_team_code
+        description: '{{ doc("away_team_code") }}'
+
+      - name: home_efg
+        description: '{{ doc("home_efg") }}'
+
+      - name: away_efg
+        description: '{{ doc("away_efg") }}'
+
+      - name: home_ft_rate
+        description: '{{ doc("home_ft_rate") }}'
+
+      - name: away_ft_rate
+        description: '{{ doc("away_ft_rate") }}'
+
+      - name: home_def_reb_pct
+        description: '{{ doc("home_def_reb_pct") }}'
+
+      - name: home_off_reb_pct
+        description: '{{ doc("home_off_reb_pct") }}'
+
+      - name: away_def_reb_pct
+        description: '{{ doc("away_def_reb_pct") }}'
+
+      - name: away_off_reb_pct
+        description: '{{ doc("away_off_reb_pct") }}'
+
+      - name: home_possession
+        description: '{{ doc("home_possession") }}'
+
+      - name: away_possession
+        description: '{{ doc("away_possession") }}'
+
+      - name: home_tov_pct
+        description: '{{ doc("home_tov_pct") }}'
+
+      - name: away_tov_pct
+        description: '{{ doc("away_tov_pct") }}'
+
+      - name: home_ts_pct
+        description: '{{ doc("home_ts_pct") }}'
+
+      - name: away_ts_pct
+        description: '{{ doc("away_ts_pct") }}'

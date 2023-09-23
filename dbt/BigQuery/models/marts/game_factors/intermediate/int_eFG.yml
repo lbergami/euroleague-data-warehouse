@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: int_efg
+    description: Intermediate table creating home and away team effective goal percentages, per game 
+    columns:
+      - name: season
+        description: '{{ doc("season") }}'
+
+      - name: game_id
+        description: '{{ doc("game_id") }}'
+
+      - name: home_efg
+        description: '{{ doc("home_efg") }}'
+
+      - name: away_efg
+        description: '{{ doc("away_efg") }}'

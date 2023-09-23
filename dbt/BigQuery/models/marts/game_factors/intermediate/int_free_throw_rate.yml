@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: int_free_throw_rate
+    description: Intermediate table creating home and away team free throws percentages, per game 
+    columns:
+      - name: season
+        description: '{{ doc("season") }}'
+
+      - name: game_id
+        description: '{{ doc("game_id") }}'
+
+      - name: home_ft_rate
+        description: '{{ doc("home_ft_rate") }}'
+
+      - name: away_ft_rate
+        description: '{{ doc("away_ft_rate") }}'
