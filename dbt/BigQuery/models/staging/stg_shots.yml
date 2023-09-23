@@ -4,11 +4,12 @@ models:
 
   - name: stg_shots
     description: This table contains information players's shot locations at game level 
-    
     columns:
-
       - name: shot_id
         description: '{{ doc("shot_id") }}'
+        tests:
+          - unique
+          - not_null
         
       - name: season
         description: '{{ doc("season") }}'

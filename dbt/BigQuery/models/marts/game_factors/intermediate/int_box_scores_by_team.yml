@@ -1,0 +1,71 @@
+version: 2
+
+models:
+  - name: int_box_scores_by_team
+    description: Intermediate table collapsing box scores at team-game level, since staging data are at player level  
+    columns:
+      - name: season
+        description: '{{ doc("season") }}'
+
+      - name: game_id
+        description: '{{ doc("game_id") }}'
+
+      - name: team_code
+        description: '{{ doc("team_code") }}'
+
+      - name: flag_home_team
+        description: '{{ doc("team_code") }}'
+
+      - name: points
+        description: Total points scored by the team, per game
+
+      - name: field_goals_made_2
+        description: 2-points scored by the team, per game
+
+      - name: field_goals_attempted_2
+        description: Attempted 2-points scored by the team, per game
+
+      - name: field_goals_made_3
+        description: 3-points scored by the team, per game
+
+      - name: field_goals_attempted_3
+        description: Attempted 3-points scored by the team, per game
+
+      - name: free_throws_made
+        description: FT scored by the team, per game
+
+      - name: free_throws_attempted
+        description: Attempted FT scored by the team, per game
+
+      - name: offensive_rebounds
+        description: Number of offensive rebounds grabbed by the team, per game
+
+      - name: defensive_rebounds
+        description: Number of defensive rebounds grabbed by the team, per game
+
+      - name: total_rebounds
+        description: Total of defensive rebounds grabbed by the team, per game
+
+      - name: assists
+        description: Number of team assists, per game
+
+      - name: steals
+        description: Number of team steals, per game
+
+      - name: turnovers
+        description: Number of team turnovers, per game
+
+      - name: blocks_favour
+        description: Number of team blocks in favour, per game
+
+      - name: blocks_against
+        description: Number of team blocks against, per game
+
+      - name: fouls_commited
+        description: Number of team fouls committed, per game 
+
+      - name: fouls_received
+        description: Number of team fouls received, per game 
+
+      - name: valuation
+        description: Total team valuation, per game

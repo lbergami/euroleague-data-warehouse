@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: int_game_rebounds_pct
+    description: Intermediate table creating home and away team rebounds percentages, per game 
+    columns:
+      - name: season
+        description: '{{ doc("season") }}'
+
+      - name: game_id
+        description: '{{ doc("game_id") }}'
+
+      - name: home_def_reb_pct
+        description: '{{ doc("home_def_reb_pct") }}'
+
+      - name: home_off_reb_pct
+        description: '{{ doc("home_off_reb_pct") }}'
+
+      - name: away_def_reb_pct
+        description: '{{ doc("away_def_reb_pct") }}'
+
+      - name: away_off_reb_pct
+        description: '{{ doc("away_off_reb_pct") }}'

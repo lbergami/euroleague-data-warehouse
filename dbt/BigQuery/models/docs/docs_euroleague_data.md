@@ -1,8 +1,10 @@
 # Euroleage data documentation
 
-This file contains docs blocks for the three staging tables
+This file contains docs blocks for project documentation 
 
-## Box Scores Table
+## Staging models
+
+### Box Scores Table
 
 This section contains documentation from the Box scores table
 
@@ -118,7 +120,7 @@ Number of fouls received by the player in the game
 Player's valuation of the game
 {% enddocs %}
 
-## Play-by-Play Table
+### Play-by-Play Table
 
 This section contains documentation from the Play-by-play table.
 
@@ -170,7 +172,7 @@ Points made by the home team up to that point in the game
 Points made by the away team up to that point in the game
 {% enddocs %}
 
-## Shots Table
+### Shots Table
 
 This section contains documentation from shots table.
 
@@ -217,3 +219,113 @@ Whether the shot is taken off a turnover
 {% docs console %}
 Time left on the clock when the shot is taken
 {% enddocs %}
+
+## Data Marts 
+
+### General game - team dimension tables 
+
+{% docs home_team %}
+Name of the team playing at home 
+{% enddocs %}
+
+{% docs away_team %}
+Name of the team playing away
+{% enddocs %}
+
+{% docs home_team_score %}
+Total points scored by the team playing at home
+{% enddocs %}
+
+{% docs away_team_score %}
+Total points scored by the team playing away
+{% enddocs %}
+
+{% docs home_team_code %}
+3-Letter code identifying the team playing at home 
+{% enddocs %}
+
+{% docs away_team_code %}
+3-Letter code identifying the team playing away
+{% enddocs %}
+
+{% docs flag_team_home %}
+Binary indicator which flags whether the team is home vs away
+{% enddocs %}
+
+### Game factors 
+
+{% docs home_efg %}
+Home team effective goal percentage. The formula is The formula is (FG + 0.5 * 3P) / FGA, where:
+FG = Field goals (incl. both 2-point and 3-point goals)
+3P = 3-point field goals 
+FGA = Field Goal Attempts (incl. both 2-point and 3-point field goal attempts)
+This statistic adjusts for the fact that a 3-point field goal is worth one more point than a 2-point field goal. 
+{% enddocs %}
+
+{% docs away_efg %}
+Away team effective goal percentage
+{% enddocs %}
+
+{% docs home_ft_rate %}
+Home team free throw rate
+{% enddocs %}
+
+{% docs away_ft_rate %}
+Away team free throw rate
+{% enddocs %}
+
+{% docs home_def_reb_pct %}
+Home team percentage of defensive rebounds. The formula includes the number of rebounds got by the away team  
+{% enddocs %}
+
+{% docs home_off_reb_pct %}
+Home team percentage of offensive rebounds. The formula includes the number of rebounds got by the home team 
+{% enddocs %}
+
+{% docs away_def_reb_pct %}
+Away team percentage of defensive rebounds 
+{% enddocs %}
+
+{% docs away_off_reb_pct %}
+Away team percentage of defensive rebounds
+{% enddocs %}
+
+{% docs home_possession %}
+Home team number of possessions. This formula estimates possessions based on both the team's statistics and their opponent's statistics, then averages them to provide a more stable estimate.
+{% enddocs %}
+
+{% docs away_possession %}
+Away team number of possessions
+{% enddocs %}
+
+{% docs home_tov_pct %}
+Home team turnover percentage. Estimate of turnovers per 100 plays. The formula is 100 * TOV / (FGA + 0.44 * FTA + TOV), where TOV is the number of turnover per game
+{% enddocs %}
+
+{% docs away_tov_pct %}
+Aeay team turnover percentage
+{% enddocs %}
+
+{% docs home_ts_pct %}
+Home team true shooting percentage. Measure of shooting efficiency that takes into account field goals, 3-point goals, and free throws. 
+Points / (2 * TSA), where TSA is the true shooting attempt equal to FGA + 0.44 * FTA.
+FGA = Field Goal Attempts (incl. both 2-point and 3-point field goal attempts)
+FTA = Free Throw Attempts    
+{% enddocs %}
+
+{% docs away_ts_pct %}
+Away team true shooting percentage
+{% enddocs %}
+
+
+
+
+
+
+
+
+
+
+
+
+

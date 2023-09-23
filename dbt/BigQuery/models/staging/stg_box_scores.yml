@@ -3,11 +3,12 @@ version: 2
 models:
   - name: stg_box_scores
     description: This table contains information about summary statistics on players' performances at game level 
-    
     columns:
-      
       - name: box_scores_id
         description: '{{ doc("box_scores_id") }}'
+        tests:
+          - unique
+          - not_null
 
       - name: season
         description: '{{ doc("season") }}'

@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: int_tov_pct
+    description: Intermediate table creating home and away team turnover percentages, per game
+    columns:
+      - name: season
+        description: '{{ doc("season") }}'
+
+      - name: game_id
+        description: '{{ doc("game_id") }}'
+
+      - name: home_tov_pct
+        description: '{{ doc("home_tov_pct") }}'
+
+      - name: away_tov_pct
+        description: '{{ doc("away_tov_pct") }}'

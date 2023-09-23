@@ -93,23 +93,3 @@ left join tov
     on efg.season = tov.season and efg.game_id = tov.game_id     
 left join ts
     on efg.season = ts.season and efg.game_id = ts.game_id     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
