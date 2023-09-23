@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: fct_offensive_actions_indicators
+    description: ""
+    columns:
+      - name: season
+        description: '{{ doc("season") }}'
+
+      - name: game_id
+        description: '{{ doc("game_id") }}'
+
+      - name: team
+        description: '{{ doc("team") }}'
+
+      - name: fastbreak
+        description: Points made by the team after a fastbreak, per game 
+
+      - name: second_chance
+        description: Points made by the team after an offensive rebounds, per game 
+
+      - name: points_off_turnover
+        description: Points made by the team after steal, per game 
+
+      - name: flag_home_team
+        description: '{{ doc("flag_home_team") }}'

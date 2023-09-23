@@ -9,4 +9,4 @@ source_table as (
 ) 
 select * 
 from source_table
-where flag_team_home = 0
+where flag_home_team = 0

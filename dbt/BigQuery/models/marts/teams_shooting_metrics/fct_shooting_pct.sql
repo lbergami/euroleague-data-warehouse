@@ -93,7 +93,7 @@ select
     l.shot_zone_label, 
     gts.n_team_shots_by_zone / gts.tot_team_shots as shooting_selection_pct,     
     gts.n_team_made_shots_by_zone / gts.n_team_shots_by_zone as shooting_pct, 
-    hat.flag_team_home,
+    hat.flag_home_team,
     l.shot_zone_ordered_num_label    
 from game_team_shooting as gts
 /* Add shot zones labels */

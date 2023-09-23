@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: fct_shooting_pct
+    description: The table reports teams' shooting metrics, per game 
+    columns:
+      - name: season
+        description: '{{ doc("season") }}'
+
+      - name: game_id
+        description: '{{ doc("game_id") }}'
+
+      - name: team
+        description: '{{ doc("team") }}'
+
+      - name: shot_zone_label
+        description: '{{ doc("shot_zone_label") }}'
+
+      - name: shooting_selection_pct
+        description: '{{ doc("shooting_selection_pct") }}'
+
+      - name: shooting_pct
+        description: '{{ doc("shooting_pct") }}'
+
+      - name: flag_home_team
+        description: '{{ doc("flag_home_team") }}'
+
+      - name: shot_zone_ordered_num_label
+        description: '{{ doc("shot_zone_ordered_num_label") }}'

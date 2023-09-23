@@ -209,7 +209,7 @@ Whether the shot is taken after a fastbreak or not
 {% enddocs %}
 
 {% docs second_chance %}
-Whether the shot is taken after as a second chance or not
+Whether the shot is taken after as an offensive rebounds or not
 {% enddocs %}
 
 {% docs points_off_turnover %}
@@ -246,10 +246,6 @@ Total points scored by the team playing away
 
 {% docs away_team_code %}
 3-Letter code identifying the team playing away
-{% enddocs %}
-
-{% docs flag_team_home %}
-Binary indicator which flags whether the team is home vs away
 {% enddocs %}
 
 ### Game factors 
@@ -316,6 +312,29 @@ FTA = Free Throw Attempts
 {% docs away_ts_pct %}
 Away team true shooting percentage
 {% enddocs %}
+
+### Team shooting metrics  
+
+{% docs shot_zone_label %}
+Shooting zone area based on shooting coordinates 
+{% enddocs %}
+
+{% docs shooting_selection_pct %}
+Team's percentage of shots by shoot zone, per game  
+{% enddocs %}
+
+{% docs shooting_pct %}
+Team's percentage of made shots by shoot zone, per game  
+{% enddocs %}
+
+{% docs shot_zone_ordered_num_label %}
+Numeric indicator to order the shoot_zone_label
+{% enddocs %}
+
+
+
+
+
 
 
 
