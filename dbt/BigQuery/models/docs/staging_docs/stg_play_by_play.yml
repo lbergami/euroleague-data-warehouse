@@ -13,9 +13,13 @@ models:
 
       - name: season
         description: '{{ doc("season") }}'
+        tests:
+          - not_null  
 
       - name: game_id
         description: '{{ doc("game_id") }}'
+        tests:
+          - not_null  
 
       - name: player_id
         description: '{{ doc("player_id") }}'
@@ -28,6 +32,8 @@ models:
 
       - name: team_code
         description: '{{ doc("team_code") }}'
+        tests:
+          - not_null  
 
       - name: team
         description: '{{ doc("team") }}'

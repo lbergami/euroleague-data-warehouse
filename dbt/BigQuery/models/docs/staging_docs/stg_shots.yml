@@ -13,12 +13,18 @@ models:
         
       - name: season
         description: '{{ doc("season") }}'
+        tests:
+          - not_null  
 
       - name: game_id
         description: '{{ doc("game_id") }}'
+        tests:
+          - not_null
 
       - name: team_code
         description: '{{ doc("team_code") }}'
+        tests:
+          - not_null
 
       - name: player_id
         description: '{{ doc("player_id") }}'
@@ -31,16 +37,24 @@ models:
 
       - name: action_type
         description: '{{ doc("action_type") }}'
-
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['ftm', '2fga','layupatt', '2fgm', '3fga', '3fgm', '2fgab', 'layupmd', '3fgab', 'dunk']
+          
       - name: points
         description: '{{ doc("shot_points") }}'
 
       - name: coord_x
         description: '{{ doc("coord_x") }}'
+        tests:
+          - not_null
 
       - name: coord_y
         description: '{{ doc("coord_y") }}'
-
+        tests:
+          - not_null
+          
       - name: zone
         description: '{{ doc("zone") }}'
 

@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: fct_offensive_actions_indicators
-    description: ""
+    description: The teble reports points by the team out of a fastbreak, an offensive rebounds, a steal, per game. Home and Away teams data are in long format.
     columns:
       - name: season
         description: '{{ doc("season") }}'

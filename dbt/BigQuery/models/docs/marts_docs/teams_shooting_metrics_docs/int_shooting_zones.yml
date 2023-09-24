@@ -12,6 +12,9 @@ models:
 
       - name: shot_id
         description: '{{ doc("shot_id") }}'
+        tests:
+          - unique
+          - not_null
 
       - name: team_code
         description: '{{ doc("team_code") }}'
