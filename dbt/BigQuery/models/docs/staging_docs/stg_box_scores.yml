@@ -12,15 +12,26 @@ models:
 
       - name: season
         description: '{{ doc("season") }}'
+        tests:
+          - not_null  
 
       - name: game_id
         description: '{{ doc("game_id") }}'
+        tests:
+          - not_null  
 
       - name: team_code
         description: '{{ doc("team_code") }}'
+        tests:
+          - not_null  
 
       - name: flag_home_team
         description: '{{ doc("flag_home_team") }}'
+        tests:
+          - not_null
+          - accepted_values:
+              values: [TRUE, FALSE]
+              quote: false
 
       - name: player_id
         description: '{{ doc("player_id") }}'

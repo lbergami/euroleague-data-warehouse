@@ -12,6 +12,9 @@ models:
 
       - name: shot_id
         description: '{{ doc("shot_id") }}'
+        tests:
+          - unique
+          - not_null
 
       - name: team_code
         description: '{{ doc("team_code") }}'
@@ -24,9 +27,18 @@ models:
 
       - name: shot_type
         description: '{{ doc("shot_type") }}'
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['3p', '2p']
 
       - name: made_shot
         description: '{{ doc("made_shot") }}'
+        tests:
+          - not_null
+          - accepted_values:
+              values: [0, 1]
+              quote: false
 
       - name: fastbreak
         description: '{{ doc("fastbreak") }}'

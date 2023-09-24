@@ -15,7 +15,10 @@ models:
 
       - name: shot_id
         description: '{{ doc("shot_id") }}'
-
+        tests:
+          - unique
+          - not_null
+          
       - name: coord_x
         description: '{{ doc("coord_x") }}'
 
@@ -24,9 +27,15 @@ models:
 
       - name: shot_zone
         description: '{{ doc("shot_zone") }}'
+        tests:
+          - accepted_values:
+              values: ['l_corner_3p', 'r_corner_3p', 'l_wing_3p', 'r_wing_3p', 'central_3p', NULL]
 
       - name: shot_zone_agg
         description: '{{ doc("shot_zone_agg") }}'
+        tests:
+          - accepted_values:
+              values: ['baseline_3p', 'wing_3p', 'central_3p', NULL]
 
       - name: made_shot
         description: '{{ doc("made_shot") }}'

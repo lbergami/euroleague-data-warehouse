@@ -12,15 +12,26 @@ models:
 
       - name: shot_id
         description: '{{ doc("shot_id") }}'
+        tests:
+          - unique
+          - not_null
 
       - name: team_code
         description: '{{ doc("team_code") }}'
 
       - name: shot_zone
         description: '{{ doc("shot_zone") }}'
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['l_baseline_2p', 'l_wing_2p', 'central_2p', 'r_wing_2p', 'r_baseline_2p', 'l_high_paint_2p', 'r_high_paint_2p', 'l_low_paint_2p', 'r_low_paint_2p']
 
       - name: shot_zone_agg
         description: '{{ doc("shot_zone_agg") }}'
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['baseline_2p', 'wing_2p', 'central_2p', 'high_paint_2p', 'low_paint_2p']
 
       - name: made_shot
         description: '{{ doc("made_shot") }}'
