@@ -1,4 +1,3 @@
-/* Aggregate shot zones lables for reporting */
 
 with 
 

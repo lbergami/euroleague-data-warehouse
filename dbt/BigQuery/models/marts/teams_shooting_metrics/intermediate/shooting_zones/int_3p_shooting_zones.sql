@@ -1,9 +1,4 @@
 
-/* 3 points shot zones based on shot locations */
-
-/* 'int_3p_shooting_zones' also includes shots with missing shot areas. These are shots labelled as 3 points but with 
-    a set of coordinates that belong to a 2 points. They are assumed to be 2-point shots and so added to the 2-point lists */ 
-
 with 
 
 three_points_shots as (

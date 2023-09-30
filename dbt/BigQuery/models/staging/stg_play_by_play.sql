@@ -14,7 +14,6 @@ renamed as (
         game_id,
         lower(trim(player_id)) as player_id,
         lower(trim(player)) as player_name,
-        dorsal,
         lower(trim(codeteam)) as team_code,
         lower(trim(team)) as team,
         game_play_id,
