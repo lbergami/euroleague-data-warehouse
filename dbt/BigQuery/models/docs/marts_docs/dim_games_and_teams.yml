@@ -3,30 +3,45 @@ version: 2
 models:
   - name: dim_games_and_teams
     description: Table includes the list of games, home and away teams and scores (wide format)
-    tests:
-      - unique:
-          column_name: "season || '-' || game_id"
     columns:
       - name: season
         description: '{{ doc("season") }}'
-
+        tests:
+          - not_null
+          
       - name: game_id
         description: '{{ doc("game_id") }}'
+        tests:
+          - not_null 
 
       - name: home_team
         description: '{{ doc("home_team") }}'
+        tests:
+          - not_null       
 
       - name: away_team
         description: '{{ doc("away_team") }}'
+        tests:
+          - not_null  
 
       - name: home_team_score
         description: '{{ doc("home_team_score") }}'
+        tests:
+          - not_null  
+          - column_is_positive
 
       - name: away_team_score
         description: '{{ doc("away_team_score") }}'
+        tests:
+          - not_null  
+          - column_is_positive
 
       - name: home_team_code
         description: '{{ doc("home_team_code") }}'
+        tests:
+          - not_null  
 
       - name: away_team_code
         description: '{{ doc("away_team_code") }}'
+        tests:
+          - not_null  

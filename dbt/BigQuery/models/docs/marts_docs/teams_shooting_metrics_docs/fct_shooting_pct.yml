@@ -2,10 +2,7 @@ version: 2
 
 models:
   - name: fct_shooting_pct
-    description: The table reports teams' shooting metrics, per game. Home and Away teams data are in long format.
-    tests:
-      - unique:
-          column_name: "season || '-' || game_id"
+    description: The model create a table which reports teams' shooting metrics, per game. Home and Away teams data are in long format.
     columns:
       - name: season
         description: '{{ doc("season") }}'

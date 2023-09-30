@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: dim_shot_zones_labels
-    description: ""
+    description: the model creates a table which create a numeric label for shot zones lables for reporting
     columns:
       - name: shot_zone_agg
         description: '{{ doc("shot_zone_agg") }}'

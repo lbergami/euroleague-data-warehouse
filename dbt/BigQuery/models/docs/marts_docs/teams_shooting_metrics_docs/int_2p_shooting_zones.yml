@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: int_2p_shooting_zones
-    description: ""
+    description: the model creates a table which includes 2-point shots by team and game, reporting shooting areas and whether the shot has been made or not
     columns:
       - name: season
         description: '{{ doc("season") }}'

@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: int_shot_locations
-    description: ""
+    description: The table reports shooting locations by team and games, with a clean version of the shoot types - e.g. 3p or 2p only, excluding the presence of FTs, and an indicator of made/missed shot
     columns:
       - name: season
         description: '{{ doc("season") }}'

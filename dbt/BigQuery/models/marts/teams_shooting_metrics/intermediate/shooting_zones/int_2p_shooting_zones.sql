@@ -1,4 +1,3 @@
-/* 2 points shot zones based on shot locations */
 
 with 
 
