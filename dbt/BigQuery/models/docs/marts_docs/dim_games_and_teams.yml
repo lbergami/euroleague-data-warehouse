@@ -31,13 +31,13 @@ models:
         description: '{{ doc("home_team_score") }}'
         tests:
           - not_null  
-          - column_is_positive
+          - column_is_strictly_positive
 
       - name: away_team_score
         description: '{{ doc("away_team_score") }}'
         tests:
           - not_null  
-          - column_is_positive
+          - column_is_strictly_positive
 
       - name: home_team_code
         description: '{{ doc("home_team_code") }}'
