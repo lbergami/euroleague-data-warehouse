@@ -2,7 +2,10 @@ version: 2
 
 models:
   - name: int_game_rebounds_pct
-    description: Intermediate table creating home and away team rebounds percentages, per game 
+    description: Intermediate model creating a table with home and away team rebounds percentages, per game 
+    tests:
+      - unique:
+          column_name: "season || '-' || game_id"
     columns:
       - name: season
         description: '{{ doc("season") }}'

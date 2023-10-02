@@ -1,6 +1,6 @@
 /* The following generic test checks if a column is always weakly positive */
 
-{% test column_is_strictly_positive(model, column_name) %}
+{% test column_is_weakly_positive(model, column_name) %}
 
 select *
 from {{ model }}
