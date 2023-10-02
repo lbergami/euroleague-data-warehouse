@@ -2,7 +2,10 @@ version: 2
 
 models:
   - name: int_ts_pct
-    description: Intermediate table creating home and away team true shooting percentages, per game
+    description: Intermediate model creating home and away team true shooting percentages, per game
+    tests:
+      - unique:
+          column_name: "season || '-' || game_id"
     columns:
       - name: season
         description: '{{ doc("season") }}'

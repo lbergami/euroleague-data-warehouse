@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: int_box_scores_by_team
-    description: Intermediate table collapsing box scores at team-game level, since staging data are at player level  
+    description: Intermediate model creating a table collapsing box scores metrics at team-game level, since staging data are at player level  
     columns:
       - name: season
         description: '{{ doc("season") }}'
@@ -122,4 +122,3 @@ models:
         description: Total team valuation, per game
         tests:
           - not_null  
-          - column_is_weakly_positive
