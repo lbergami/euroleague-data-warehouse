@@ -2,8 +2,8 @@ version: 2
 
 models:
   - name: int_3p_shooting_zones
-    description: 3-point shot zones by team and game based on shot locations, reporting shooting areas and whether the shot has been made or not. 
-                 The table also includes shots with missing shot areas. These are shots labelled as 3-point shots in the raw data but with a set of coordinates that belong to a 2-point ones, so they are added to the that list. 
+    description: The model includes 3-point shot zones by team and game based on shot locations, reporting shooting areas and whether the shot has been made or not. 
+                 A number of shots have missing shot areas. These are shots labelled as 3-point shots in the raw data but with a set of coordinates that belong to a 2-point ones, so they are added to the that list. 
     columns:
       - name: season
         description: '{{ doc("season") }}'

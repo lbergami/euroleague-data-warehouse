@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: dim_games_home_away_teams
-    description:  Table including home/away indicator for each combination of team and game, with a granularity season-game-team (long format shape)
+    description:  Model including home/away indicator for each combination of team and game, with a granularity season-game-team (long format shape)
     columns:
       - name: season
         description: '{{ doc("season") }}'

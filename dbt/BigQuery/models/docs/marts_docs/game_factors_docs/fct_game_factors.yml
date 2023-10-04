@@ -4,25 +4,40 @@ version: 2
 models:
   - name: fct_game_factors
     description: Factor model reporting home and away team main factors by game. Table granularity is by season and game id (home and away teams reported in the wide format)  
+    tests:
+      - unique:
+          column_name: "season || '-' || game_id"    
     columns:
       - name: season
         description: '{{ doc("season") }}'
+        tests:
+          - not_null  
 
       - name: game_id
         description: '{{ doc("game_id") }}'
+        tests:
+          - not_null  
 
       - name: home_team
         description: '{{ doc("home_team") }}'
+        tests:
+          - not_null  
 
       - name: away_team
         description: '{{ doc("away_team") }}'
+        tests:
+          - not_null  
 
       - name: home_team_code
         description: '{{ doc("home_team_code") }}'
+        tests:
+          - not_null  
 
       - name: away_team_code
         description: '{{ doc("away_team_code") }}'
-
+        tests:
+          - not_null  
+          
       - name: home_efg
         description: '{{ doc("home_efg") }}'
 
