@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: stg_box_scores
-    description: This table contains information about summary statistics on players' performances at game level 
+    description: Staging model containing information about summary statistics on players' performances at game level 
     columns:
       - name: box_scores_id
         description: '{{ doc("box_scores_id") }}'

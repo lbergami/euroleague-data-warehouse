@@ -1,48 +1,44 @@
-
 /* This singular test checks whether the three sources contain the same set of games per season */
 
-with 
+with
 
 pbp as (
 
-    select 
-        distinct 
-        season, 
-        game_id, 
-        1 as table_pbp 
-    from {{ ref ('stg_play_by_play') }}    
+    select distinct
+        season,
+        game_id,
+        1 as table_pbp
+    from {{ ref ('stg_play_by_play') }}
 
-), 
+),
 
 bs as (
 
-    select 
-        distinct 
-        season, 
-        game_id, 
-        1 as table_bs 
-    from {{ ref ('stg_box_scores') }}    
+    select distinct
+        season,
+        game_id,
+        1 as table_bs
+    from {{ ref ('stg_box_scores') }}
 
-), 
-    
+),
+
 s as (
 
-    select 
-        distinct 
-        season, 
-        game_id, 
-        1 as table_shots 
-    from {{ ref ('stg_shots') }}    
+    select distinct
+        season,
+        game_id,
+        1 as table_shots
+    from {{ ref ('stg_shots') }}
 
-), 
+),
 
 combined_table as (
 
-    select 
-        coalesce(pbp.season, bs.season, s.season) as season, 
+    select
+        coalesce(pbp.season, bs.season, s.season) as season,
         coalesce(pbp.game_id, bs.game_id, s.game_id) as game_id,
-        table_pbp, 
-        table_bs, 
+        table_pbp,
+        table_bs,
         table_shots
     from pbp
     full join bs
