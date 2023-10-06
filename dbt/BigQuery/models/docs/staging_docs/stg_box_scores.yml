@@ -50,54 +50,88 @@ models:
 
       - name: points
         description: '{{ doc("points") }}'
+        tests:
+          - column_is_weakly_positive
 
       - name: field_goals_made_2
         description: '{{ doc("field_goals_made_2") }}'
+        tests:
+          - column_is_weakly_positive
 
       - name: field_goals_attempted_2
         description: '{{ doc("field_goals_attempted_2") }}'
+        tests:
+          - column_is_weakly_positive
 
       - name: field_goals_made_3
         description: '{{ doc("field_goals_made_3") }}'
+        tests:
+          - column_is_weakly_positive
 
       - name: field_goals_attempted_3
         description: '{{ doc("field_goals_attempted_3") }}'
+        tests:
+          - column_is_weakly_positive
 
       - name: free_throws_made
         description: '{{ doc("free_throws_made") }}'
+        tests:
+          - column_is_weakly_positive
 
       - name: free_throws_attempted
         description: '{{ doc("free_throws_attempted") }}'
+        tests:
+          - column_is_weakly_positive
 
       - name: offensive_rebounds
         description: '{{ doc("offensive_rebounds") }}'
+        tests:
+          - column_is_weakly_positive
 
       - name: defensive_rebounds
         description: '{{ doc("defensive_rebounds") }}'
+        tests:
+          - column_is_weakly_positive
 
       - name: total_rebounds
         description: '{{ doc("total_rebounds") }}'
+        tests:
+          - column_is_weakly_positive
 
       - name: assists
         description: '{{ doc("assists") }}'
+        tests:
+          - column_is_weakly_positive
 
       - name: steals
         description: '{{ doc("steals") }}'
+        tests:
+          - column_is_weakly_positive
 
       - name: turnovers
         description: '{{ doc("turnovers") }}'
+        tests:
+          - column_is_weakly_positive
 
       - name: blocks_favour
         description: '{{ doc("blocks_favour") }}'
+        tests:
+          - column_is_weakly_positive
 
       - name: blocks_against
         description: '{{ doc("blocks_against") }}'
+        tests:
+          - column_is_weakly_positive
 
       - name: fouls_commited
         description: '{{ doc("fouls_commited") }}'
+        tests:
+          - column_is_weakly_positive
 
       - name: fouls_received
         description: '{{ doc("fouls_received") }}'
-
+        tests:
+          - column_is_weakly_positive
+          
       - name: valuation
         description: '{{ doc("valuation") }}'

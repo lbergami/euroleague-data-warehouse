@@ -1,3 +1,10 @@
+{{
+    config(
+        materialized='incremental',
+        unique_key='box_scores_id'
+    )
+}}
+
 with
 
 source as (
@@ -39,6 +46,12 @@ renamed as (
         lower(trim(player)) as player_name
 
     from source
+
+    {% if is_incremental() %}
+
+        where box_scores_id > (select max(box_scores_id) from {{ this }})
+
+    {% endif %}
 
 )
 
