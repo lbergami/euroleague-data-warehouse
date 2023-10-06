@@ -1,12 +1,45 @@
-/* Create factor table incl. offensive action indicators (e.g. fastbreak, 2nd chance, etc.) */
-
 with
 
-/* Import dimension table with home/away indicator */
 home_away_teams as (
 
     select *
     from {{ ref('dim_games_home_away_teams') }}
+
+),
+
+made_ft as (
+
+    select *
+    from {{ ref('int_ft') }}  
+
+), 
+
+points_conversion as (
+
+    select
+        season,
+        game_id,
+        team_code,
+        fastbreak
+        * cast(regexp_replace(shot_type, '[^0-9 ]', '') as numeric)
+            as fastbreak,
+        second_chance
+        * cast(regexp_replace(shot_type, '[^0-9 ]', '') as numeric)
+            as second_chance,
+        points_off_turnover
+        * cast(regexp_replace(shot_type, '[^0-9 ]', '') as numeric)
+            as points_off_turnover
+    from {{ ref('int_shot_locations') }}
+
+),
+
+made_shots as (
+
+    select *
+    from made_ft
+    union all
+    select *
+    from points_conversion
 
 ),
 
@@ -19,7 +52,7 @@ offensive_action_indicators as (
         sum(fastbreak) as fastbreak,
         sum(second_chance) as second_chance,
         sum(points_off_turnover) as points_off_turnover
-    from {{ ref('int_shot_locations') }}
+    from points_conversion
     group by 1, 2, 3
 
 )
