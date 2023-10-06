@@ -7,9 +7,12 @@
 * Use consistent style in *group by* and *order by* (either names or numbers, not both)
 * Use SQLFluff's default linting rules to format *select* statements (models and tests)
 
+
+
 # Testing Conventions
 
-Setting the convensions listed below for staging and marts to ensure good test coverage and to avoid redundancy as the project scale up.
+Setting the convensions listed below for staging and marts to ensure good test coverage and 
+to avoid redundancy as the project scales up.
 
 ## Staging models 
 

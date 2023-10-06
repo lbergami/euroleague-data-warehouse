@@ -1,3 +1,10 @@
+{{
+    config(
+        materialized='incremental',
+        unique_key='play_by_play_id'
+    )
+}}
+
 with
 
 source as (
@@ -28,6 +35,12 @@ renamed as (
         lower(trim(playtype)) as playtype
 
     from source
+
+    {% if is_incremental() %}
+
+        where play_by_play_id > (select max(play_by_play_id) from {{ this }})
+
+    {% endif %}
 
 )
 

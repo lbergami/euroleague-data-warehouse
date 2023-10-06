@@ -1,3 +1,10 @@
+{{
+    config(
+        materialized='incremental',
+        unique_key='shot_id'
+    )
+}}
+
 with
 
 source as (
@@ -31,6 +38,13 @@ renamed as (
         lower(trim(zone)) as zone
 
     from source
+
+    {% if is_incremental() %}
+
+        where shot_id > (select max(shot_id) from {{ this }})
+
+    {% endif %}
+
 
 )
 
