@@ -23,13 +23,22 @@ renamed as (
         cast(points as numeric) as points,
         cast(coord_x as numeric) as coord_x,
         cast(coord_y as numeric) as coord_y,
-        cast(fastbreak as numeric) as fastbreak,
-        cast(second_chance as numeric) as second_chance,
-        cast(points_off_turnover as numeric) as points_off_turnover,
         cast(minute as numeric) as minute,
         console,
         cast(points_home as numeric) as points_home,
         cast(points_away as numeric) as points_away,
+        case
+            when cast(fastbreak as numeric) = 1 then 1
+            else 0
+        end as fastbreak,
+        case
+            when cast(second_chance as numeric) = 1 then 1
+            else 0
+        end as second_chance,
+        case
+            when cast(points_off_turnover as numeric) = 1 then 1
+            else 0
+        end as points_off_turnover,
         lower(trim(team)) as team_code,
         lower(trim(id_player)) as player_id,
         lower(trim(player)) as player_name,

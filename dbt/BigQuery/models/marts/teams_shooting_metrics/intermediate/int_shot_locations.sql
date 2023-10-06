@@ -1,5 +1,3 @@
-/* Create intermediate table with re-scaled shot locations, harmonize action type, and 'made shot' flag */
-
 with
 
 /* Select relevant variables from the stage shot data */
@@ -15,23 +13,12 @@ selected_variables_shots as (
         points,
         coord_x,
         coord_y,
-        /* Replace Null values with zeros for fastbreak, second_chance, points_off_turnover */
-        case
-            when fastbreak = 1 then 1
-            else 0
-        end as fastbreak,
-        case
-            when second_chance = 1 then 1
-            else 0
-        end as second_chance,
-        case
-            when points_off_turnover = 1 then 1
-            else 0
-        end as points_off_turnover
+        fastbreak,
+        second_chance,
+        points_off_turnover
     from {{ ref('stg_shots') }}
     /* Exclude FT */
     where action_type != 'ftm'
-
 
 ),
 

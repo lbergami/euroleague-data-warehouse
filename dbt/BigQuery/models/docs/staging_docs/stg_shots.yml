@@ -60,13 +60,28 @@ models:
 
       - name: fastbreak
         description: '{{ doc("fastbreak") }}'
+        tests:
+          - not_null
+          - accepted_values:
+              values: [0, 1]
+              quote: false
 
       - name: second_chance
         description: '{{ doc("second_chance") }}'
+        tests:
+          - not_null
+          - accepted_values:
+              values: [0, 1]
+              quote: false
 
       - name: points_off_turnover
         description: '{{ doc("points_off_turnover") }}'
-
+        tests:
+          - not_null
+          - accepted_values:
+              values: [0, 1]
+              quote: false
+              
       - name: minute
         description: '{{ doc("minute") }}'
 
