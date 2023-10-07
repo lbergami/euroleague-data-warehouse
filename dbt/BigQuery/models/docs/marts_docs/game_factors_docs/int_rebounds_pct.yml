@@ -1,33 +1,34 @@
 version: 2
 
 models:
-  - name: int_ts_pct
-    description: Intermediate model creating home and away team true shooting percentages, per game
-    tests:
-      - unique:
-          column_name: "season || '-' || game_id"
+  - name: int_rebounds_pct
+    description: Intermediate model creating a table with home and away team rebounds percentages, per game 
     columns:
       - name: season
         description: '{{ doc("season") }}'
+        tests:
+          - not_null
 
       - name: game_id
         description: '{{ doc("game_id") }}'
-
+        tests:
+          - not_null
+          
       - name: key_game_factor
         description: '{{ doc("key_game_factor") }}'
         tests:
           - not_null
           - accepted_values:
-              values: ['TS %']
+              values: ['OREB %', 'DREB %']
 
       - name: home_game_factor
-        description: '{{ doc("home_ts_pct") }}'
+        description: '{{ doc("home_reb_pct") }}'
         tests:
           - not_null
           - column_is_weakly_positive
 
       - name: away_game_factor
-        description: '{{ doc("away_ts_pct") }}'
+        description: '{{ doc("away_reb_pct") }}'
         tests:
           - not_null
-          - column_is_weakly_positive        
+          - column_is_weakly_positive
