@@ -41,8 +41,9 @@ ts_pct_per_game_away_team as (
 select
     h.season,
     h.game_id,
-    h.home_ts_pct,
-    a.away_ts_pct
+    'TS %' as key_game_factor,
+    h.home_ts_pct as home_game_factor,
+    a.away_ts_pct as away_game_factor
 from ts_pct_per_game_home_team as h
 left join ts_pct_per_game_away_team as a
     on h.season = a.season and h.game_id = a.game_id

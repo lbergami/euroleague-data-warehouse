@@ -42,8 +42,9 @@ tov_pct_per_game_away_team as (
 select
     h.season,
     h.game_id,
-    h.home_tov_pct,
-    a.away_tov_pct
+    'TOV %' as key_game_factor,
+    h.home_tov_pct as home_game_factor,
+    a.away_tov_pct as away_game_factor
 from tov_pct_per_game_home_team as h
 left join tov_pct_per_game_away_team as a
     on h.season = a.season and h.game_id = a.game_id
