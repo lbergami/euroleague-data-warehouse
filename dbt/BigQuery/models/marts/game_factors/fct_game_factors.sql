@@ -1,4 +1,4 @@
-/* Combine the intermediate tables on game factors in one  */
+/* Combine the intermediate models in one game factor model for reporting */
 
 with
 
@@ -9,45 +9,25 @@ games_teams as (
 
 ),
 
-efg as (
+game_factos as (
 
     select *
     from {{ ref('int_eFG') }}
-
-),
-
-ftr as (
-
+    union all
     select *
     from {{ ref('int_free_throw_rate') }}
-
-),
-
-grp as (
-
+    union all
     select *
-    from {{ ref('int_game_rebounds_pct') }}
-
-),
-
-p as (
-
+    from {{ ref('int_rebounds_pct') }}
+    union all
     select *
     from {{ ref('int_possessions') }}
-
-),
-
-tov as (
-
+    union all
     select *
     from {{ ref('int_tov_pct') }}
-
-),
-
-ts as (
-
+    union all
     select *
-    from {{ ref('int_ts_pct') }}
+    from {{ ref('int_ts_pct') }}    
 
 )
 
@@ -59,36 +39,10 @@ select
     gt.away_team,
     gt.home_team_code,
     gt.away_team_code,
-    /* eFG  */
-    efg.home_efg,
-    efg.away_efg,
-    /* Free throw rate  */
-    ftr.home_ft_rate,
-    ftr.away_ft_rate,
-    /* Rebounds */
-    grp.home_def_reb_pct,
-    grp.home_off_reb_pct,
-    grp.away_def_reb_pct,
-    grp.away_off_reb_pct,
-    /* Ball Possession */
-    p.home_possession,
-    p.away_possession,
-    /* Turnovers */
-    tov.home_tov_pct,
-    tov.away_tov_pct,
-    /* True shooting */
-    ts.home_ts_pct,
-    ts.away_ts_pct
+    /* game factors */
+    gf.key_game_factor, 
+    gf.home_game_factor, 
+    gf.away_game_factor
 from games_teams as gt
-left join efg
-    on gt.season = efg.season and gt.game_id = efg.game_id
-left join ftr
-    on efg.season = ftr.season and efg.game_id = ftr.game_id
-left join grp
-    on efg.season = grp.season and efg.game_id = grp.game_id
-left join p
-    on efg.season = p.season and efg.game_id = p.game_id
-left join tov
-    on efg.season = tov.season and efg.game_id = tov.game_id
-left join ts
-    on efg.season = ts.season and efg.game_id = ts.game_id
+left join game_factos as gf
+    on gt.season = gf.season and gt.game_id = gf.game_id

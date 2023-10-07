@@ -2,6 +2,18 @@
 
 with
 
+off_reb_pcts as (
+
+    select
+        season,
+        game_id,
+        home_game_factor as home_off_reb_pct,
+        away_game_factor as away_off_reb_pct
+    from {{ ref('int_rebounds_pct') }}
+    where key_game_factor = 'OREB %'
+
+),
+
 /* Select relevant variables */
 selected_variables as (
 
@@ -11,15 +23,13 @@ selected_variables as (
         bs.flag_home_team,
         bs.free_throws_attempted as fta,
         bs.turnovers,
-        gr.home_def_reb_pct as home_def_reb_pct,
-        gr.home_off_reb_pct as home_off_reb_pct,
-        gr.away_def_reb_pct as away_def_reb_pct,
-        gr.away_off_reb_pct as away_off_reb_pct,
+        orp.home_off_reb_pct as home_off_reb_pct,
+        orp.away_off_reb_pct as away_off_reb_pct,
         bs.field_goals_attempted_2 + field_goals_attempted_3 as fga,
         bs.field_goals_made_2 + field_goals_made_3 as fgm
     from {{ ref('int_box_scores_by_team') }} as bs
-    left join {{ ref('int_game_rebounds_pct') }} as gr
-        on bs.season = gr.season and bs.game_id = gr.game_id
+    left join off_reb_pcts as orp
+        on bs.season = orp.season and bs.game_id = orp.game_id
 
 ),
 
@@ -56,8 +66,9 @@ poss_per_game_team_away as (
 select
     h.season,
     h.game_id,
-    h.home_possession,
-    a.away_possession
+    'Possessions' as key_game_factor,
+    h.home_possession as home_game_factor,
+    a.away_possession as away_game_factor
 from poss_per_game_team_home as h
 left join poss_per_game_team_away as a
     on h.season = a.season and h.game_id = a.game_id

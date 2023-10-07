@@ -43,8 +43,9 @@ away_efg_per_game_and_team as (
 select
     h.season,
     h.game_id,
-    h.home_efg,
-    a.away_efg
+    'eFG %' as key_game_factor,
+    h.home_efg as home_game_factor,
+    a.away_efg as away_game_factor
 from home_efg_per_game_and_team as h
 left join away_efg_per_game_and_team as a
     on h.season = a.season and h.game_id = a.game_id

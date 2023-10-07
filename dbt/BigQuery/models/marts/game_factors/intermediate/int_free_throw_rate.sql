@@ -40,8 +40,9 @@ away_ftr_per_game_and_team as (
 select
     h.season,
     h.game_id,
-    h.home_ft_rate,
-    a.away_ft_rate
+    'FTA Rate' as key_game_factor,
+    h.home_ft_rate as home_game_factor,
+    a.away_ft_rate as away_game_factor
 from home_ftr_per_game_and_team as h
 left join away_ftr_per_game_and_team as a
     on
