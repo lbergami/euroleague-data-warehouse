@@ -250,8 +250,13 @@ Total points scored by the team playing away
 
 ### Game factors 
 
+{% docs key_game_factor %}
+Key indicating the game factor metric
+{% enddocs %}
+
 {% docs home_efg %}
-Home team effective goal percentage. The formula is The formula is (FG + 0.5 * 3P) / FGA, where:
+Home team effective goal percentage. 
+The formula is The formula is (FG + 0.5 * 3P) / FGA, where:
 FG = Field goals (incl. both 2-point and 3-point goals)
 3P = 3-point field goals 
 FGA = Field Goal Attempts (incl. both 2-point and 3-point field goal attempts)
@@ -270,20 +275,12 @@ Home team free throw rate
 Away team free throw rate
 {% enddocs %}
 
-{% docs home_def_reb_pct %}
-Home team percentage of defensive rebounds. The formula includes the number of rebounds got by the away team  
+{% docs home_reb_pct %}
+Home team percentage of offensive / defensive rebounds - depending on the key_game_factor value, by game 
 {% enddocs %}
 
-{% docs home_off_reb_pct %}
-Home team percentage of offensive rebounds. The formula includes the number of rebounds got by the home team 
-{% enddocs %}
-
-{% docs away_def_reb_pct %}
-Away team percentage of defensive rebounds 
-{% enddocs %}
-
-{% docs away_off_reb_pct %}
-Away team percentage of defensive rebounds
+{% docs away_reb_pct %}
+Away team percentage of offensive / defensive rebounds - depending on the key_game_factor value, by game 
 {% enddocs %}
 
 {% docs home_possession %}

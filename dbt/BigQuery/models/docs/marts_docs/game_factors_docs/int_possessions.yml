@@ -13,8 +13,21 @@ models:
       - name: game_id
         description: '{{ doc("game_id") }}'
 
-      - name: home_possession
-        description: '{{ doc("home_possession") }}'
+      - name: key_game_factor
+        description: '{{ doc("key_game_factor") }}'
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Possessions']
 
-      - name: away_possession
+      - name: home_game_factor
+        description: '{{ doc("home_possession") }}'
+        tests:
+          - not_null
+          - column_is_weakly_positive
+
+      - name: away_game_factor
         description: '{{ doc("away_possession") }}'
+        tests:
+          - not_null
+          - column_is_weakly_positive        
