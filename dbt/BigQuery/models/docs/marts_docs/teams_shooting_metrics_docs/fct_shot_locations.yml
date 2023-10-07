@@ -1,0 +1,36 @@
+version: 2
+
+models:
+  - name: fct_shot_locations
+    description: The model reports shooting locations by team and games, an indicator of made/missed shot, and a home / away indicator
+    columns:
+      - name: season
+        description: '{{ doc("season") }}'
+
+      - name: game_id
+        description: '{{ doc("game_id") }}'
+
+      - name: team_code
+        description: '{{ doc("team_code") }}'
+
+      - name: coord_x
+        description: '{{ doc("coord_x") }}'
+
+      - name: coord_y
+        description: '{{ doc("coord_y") }}'
+
+      - name: made_shot
+        description: '{{ doc("made_shot") }}'
+        tests:
+          - not_null
+          - accepted_values:
+              values: [0, 1]
+              quote: false
+
+      - name: flag_home_team
+        description: '{{ doc("flag_home_team") }}'
+        tests:
+          - not_null
+          - accepted_values:
+              values: [0, 1]
+              quote: false
