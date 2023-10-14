@@ -1,6 +1,6 @@
 # Drazen - Euroleague basketball game reports
 Drazen is an end-to-end project which generates a report for each Euroleague basketball game played since the 2007-2008 season to explore teams' key performance indicators.
-Data are scrapped from three separate sources of the Euroleague website (play-by-play, box scores, and shot locations) and the tools used are: Python, Bigquery, DBT, and Looker Studio.
+Data are scrapped from three separate sources of the Euroleague website (play-by-play, box scores, and shot locations).The tools used are: Python, Google Storage & Bigquery, DBT, and Looker Studio.
 
 
 ![GitHub Logo](img/game_report_dashboard.PNG)
