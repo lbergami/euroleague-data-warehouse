@@ -11,7 +11,7 @@ Data are scrapped from three separate sources of the Euroleague website (play-by
 
 ### Overview
 
-* Python scripts extract the data from the Euroleague website, perform some data cleaning or add additional variables (e.g. shot clock), and load them on Google Storage buckets.
+* Python scripts extract the data from the Euroleague website, perform some data cleaning add add additional variables (e.g. shot clock). They then load them on Google Storage buckets.
 * Bigquery is used as cloud data warehouse.
 * DBT is used for data transformations, testing, and data models documentation.
 * Looker Studio is used for data visualization and hosts the final dashboard.
