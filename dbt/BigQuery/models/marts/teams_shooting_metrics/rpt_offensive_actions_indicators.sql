@@ -29,7 +29,7 @@ home_offensive_2023 as (
             oai.season = hat.season
             and oai.game_id = hat.game_id
             and oai.team_code = hat.home_team_code
-    where oai.season = 2023 and oai.flag_home_team = 1
+    where oai.season > 2022 and oai.flag_home_team = 1
 
 ),
 
@@ -49,7 +49,7 @@ away_offensive_2023 as (
             oai.season = hat.season
             and oai.game_id = hat.game_id
             and oai.team_code = hat.away_team_code
-    where oai.season = 2023 and oai.flag_home_team = 0
+    where oai.season > 2022 and oai.flag_home_team = 0
 
 )
 

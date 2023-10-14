@@ -11,6 +11,7 @@ home_away_teams as (
 select
     sl.season,
     sl.game_id,
+    sl.shot_id,
     sl.team_code,
     sl.coord_x,
     sl.coord_y,
