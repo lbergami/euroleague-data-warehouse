@@ -20,4 +20,6 @@ Data are scrapped from three separate sources of the Euroleague website (play-by
 ![GitHub Logo](img/data_pipeline_overview.PNG)
 
 ### DBT Models 
-DBT is used as transformation layer. Coding and testing convensions are set out [here](./dbt/BigQuery/README.md)
+* DBT is used as transformation layer. Coding and testing convensions are set out [here](./dbt/BigQuery/README.md).
+* The documentation for this project can be accessed from this link
+
