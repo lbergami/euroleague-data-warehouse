@@ -34,7 +34,7 @@ to avoid redundancy as the project scales up.
   performed, there is not need to perform schema or assertion tests on columns that are coming from the ‘anchor’ table, 
   with the following exception:
   * The primary key column must have *not_null* and *unique* tests.
-  * Key columns from the joined table(s) must have a *not_null* test, if it required 
+  * Key columns from the joined table(s) must have a *not_null* test, if it is required.
 
 * Otherwise on columns created in the transformation:
     * All boolean columns must have an *accepted_values* schema test. The accepted values are true and false.
