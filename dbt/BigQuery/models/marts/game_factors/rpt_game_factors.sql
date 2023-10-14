@@ -1,12 +1,12 @@
 with 
 
-game_factors_rs_23 as (
+game_factors as (
    
    select *
    from {{ ref('fct_game_factors') }} 
-   where season = 2023 
+   where season > 2022 
 
 )
 
 select *
-from game_factors_rs_23
+from game_factors
