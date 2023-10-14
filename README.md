@@ -10,5 +10,3 @@ Data are scrapped from three separate sources of the Euroleague website (play-by
 * Bigquery is used as cloud data warehouse.
 * DBT is used for data transformations, testing, and data model documentation.
 * Looker Studio is used for data visualization and hosts the final dashboard.
-
-![title](img/game_report_dashboard.png)
