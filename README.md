@@ -21,5 +21,7 @@ Data are scraped from three separate sources of the Euroleague website (play-by-
 
 ### DBT Models 
 * dbt is used as transformation layer. Coding and testing convensions are set out [here](./dbt/BigQuery/README.md).
-* The documentation for this project can be accessed from this link, while the DAG is reported below
+* The documentation for this project can be accessed from this link, while the DAG is reported below.
 
+##### Lineage Graph
+![GitHub Logo](img/dbt_dag.PNG)
