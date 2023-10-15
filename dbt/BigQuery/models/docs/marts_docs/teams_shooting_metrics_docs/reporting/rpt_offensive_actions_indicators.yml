@@ -3,6 +3,8 @@ version: 2
 models:
   - name: rpt_offensive_actions_indicators
     description: Downstream model of the fct_offensive_actions_indicators, created for reporting purposes. Games are included from season 2023 onwards
+    docs:
+      node_color: "gold"
     tests:
       - unique:
           column_name: "season || '-' || game_id"
