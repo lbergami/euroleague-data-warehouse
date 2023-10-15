@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: rpt_games_and_teams 
+    description: Downstream model of the fct_game_factors, created for reporting purposes. Games are included from season 2023 onwards
+    columns:
+      - name: season
+        description: '{{ doc("season") }}'
+        tests:
+          - accepted_values:
+              values: [2023, 2024]
+              quote: false
+                       
+      - name: game_id
+        description: '{{ doc("game_id") }}'
+
+      - name: home_team
+        description: '{{ doc("home_team") }}'     
+
+      - name: away_team
+        description: '{{ doc("away_team") }}'
+
+      - name: home_team_score
+        description: '{{ doc("home_team_score") }}'
+
+      - name: away_team_score
+        description: '{{ doc("away_team_score") }}'
+
+      - name: home_team_code
+        description: '{{ doc("home_team_code") }}'
+
+      - name: away_team_code
+        description: '{{ doc("away_team_code") }}'

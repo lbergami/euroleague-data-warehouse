@@ -254,6 +254,10 @@ Total points scored by the team playing away
 Key indicating the game factor metric
 {% enddocs %}
 
+{% docs key_game_factor_order_id %}
+Numeric ID to order list of game factors in the dashboard
+{% enddocs %}
+
 {% docs home_efg %}
 Home team effective goal percentage. 
 The formula is The formula is (FG + 0.5 * 3P) / FGA, where:
@@ -342,4 +346,28 @@ Area of the shot, based on the two coordinates.
 
 {% docs shot_zone_agg %}
 Less granular definition of shot_zone, dropping left/right distinction  
+{% enddocs %}
+
+{% docs home_team_fastbreak %}
+Points made by the home team after a fastbreak, per game 
+{% enddocs %}
+
+{% docs away_team_fastbreak %}
+Points made by the away team after a fastbreak, per game 
+{% enddocs %}
+
+{% docs home_team_second_chance %}
+Points made by the home team after an offensive rebounds, per game
+{% enddocs %}
+
+{% docs away_team_second_chance %}
+Points made by the away team after an offensive rebounds, per game
+{% enddocs %}
+
+{% docs home_team_points_off_turnover %}
+Points made by the home team after steal, per game 
+{% enddocs %}
+
+{% docs away_team_points_off_turnover %}
+Points made by the away team after steal, per game 
 {% enddocs %}

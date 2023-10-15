@@ -1,0 +1,48 @@
+version: 2
+
+models:
+  - name: rpt_offensive_actions_indicators
+    description: Downstream model of the fct_offensive_actions_indicators, created for reporting purposes. Games are included from season 2023 onwards
+    tests:
+      - unique:
+          column_name: "season || '-' || game_id"
+    columns:
+      - name: season
+        description: '{{ doc("season") }}'
+        tests:
+          - accepted_values:
+              values: [2023, 2024]
+              quote: false
+
+      - name: game_id
+        description: '{{ doc("game_id") }}'
+
+      - name: home_team
+        description: '{{ doc("home_team") }}'
+
+      - name: home_team_code
+        description: '{{ doc("home_team_code") }}'
+
+      - name: away_team
+        description: '{{ doc("away_team") }}'
+
+      - name: away_team_code
+        description: '{{ doc("away_team_code") }}'
+
+      - name: home_team_fastbreak
+        description: '{{ doc("home_team_fastbreak") }}'
+
+      - name: home_team_second_chance
+        description: '{{ doc("home_team_second_chance") }}'
+
+      - name: home_team_points_off_turnover
+        description: '{{ doc("home_team_points_off_turnover") }}'
+
+      - name: away_team_fastbreak
+        description: '{{ doc("away_team_fastbreak") }}'
+
+      - name: away_team_second_chance
+        description: '{{ doc("away_team_second_chance") }}'
+
+      - name: away_team_points_off_turnover
+        description: '{{ doc("away_team_points_off_turnover") }}'
