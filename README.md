@@ -19,7 +19,7 @@ Data are scraped from three separate sources of the Euroleague website (play-by-
 ### Data pipeline overview
 ![GitHub Logo](img/data_pipeline_overview.PNG)
 
-### DBT Models 
+### dbt Models 
 * dbt is used as transformation layer. Coding and testing convensions are set out [here](./dbt/BigQuery/README.md).
 * The documentation for this project can be accessed from this link, while the DAG is reported below.
 
