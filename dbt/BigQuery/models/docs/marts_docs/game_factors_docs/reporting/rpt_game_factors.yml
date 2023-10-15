@@ -1,12 +1,15 @@
 version: 2
 
 models:
-  - name: fct_game_factors
-    description: Factor model reporting home and away team main factors by game. 
-                 Table granularity is by season, game id, and game factor (home and away teams reported in the wide format)
+  - name: rpt_game_factors
+    description: Downstream model of the rpt_game_factors, created for reporting purposes. Games are included from season 2023 onwards
     columns:
       - name: season
         description: '{{ doc("season") }}'
+        tests:
+          - accepted_values:
+              values: [2023, 2024]
+              quote: false
 
       - name: game_id
         description: '{{ doc("game_id") }}'
@@ -25,20 +28,13 @@ models:
 
       - name: key_game_factor
         description: '{{ doc("key_game_factor") }}'
-        tests:
-         - not_null
-         - accepted_values:
-              values: ['eFG %', 'FTA Rate', 'Possessions', 'OREB %', 'DREB %', 'TOV %', 'TS %']
 
       - name: home_game_factor
         description: Home team game factor, depending on the key_game_factor
-        tests:
-         - not_null
 
       - name: away_game_factor
         description: Away team game factor, depending on the key_game_factor
-        tests:
-         - not_null
 
       - name: key_game_factor_order_id
         description: '{{ doc("key_game_factor_order_id") }}'
+

@@ -1,0 +1,42 @@
+version: 2
+
+models:
+  - name: rpt_shot_locations
+    description: Downstream model of the rpt_shot_locations, created for reporting purposes. Games are included from season 2023 onwards
+    columns:
+      - name: season
+        description: '{{ doc("season") }}'
+        tests:
+          - accepted_values:
+              values: [2023, 2024]
+              quote: false
+              
+      - name: game_id
+        description: '{{ doc("game_id") }}'
+
+      - name: shot_id
+        description: '{{ doc("shot_id") }}'
+
+      - name: home_team
+        description: '{{ doc("home_team") }}'
+
+      - name: home_team_code
+        description: '{{ doc("home_team_code") }}'
+
+      - name: away_team
+        description: '{{ doc("away_team") }}'
+
+      - name: away_team_code
+        description: '{{ doc("away_team_code") }}'
+
+      - name: coord_x
+        description: '{{ doc("coord_x") }}'
+
+      - name: coord_y
+        description: '{{ doc("coord_y") }}'
+
+      - name: made_shot
+        description: '{{ doc("made_shot") }}'
+
+      - name: flag_home_team
+        description: '{{ doc("flag_home_team") }}'

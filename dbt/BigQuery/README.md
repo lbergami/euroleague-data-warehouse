@@ -2,10 +2,10 @@
 
 ## General 
 
-* Use lower case for all keywords
-* Use trailing commas in *select* statements
-* Use consistent style in *group by* and *order by* (either names or numbers, not both)
-* Use SQLFluff's default linting rules to format *select* statements (models and tests)
+* Use lower case for all keywords.
+* Use trailing commas in *select* statements.
+* Use consistent style in *group by* and *order by* (either names or numbers, not both).
+* Use SQLFluff's default linting rules to format *select* statements (models and tests).
 
 
 
@@ -43,3 +43,13 @@ to avoid redundancy as the project scales up.
     * Columns that should be unique must have a *unique* schema test.
     * Columns that are numeric and that cannot have negative values should have an assetion test to check positivity.
 
+* Data models that feed into the dashboard must have the prefix *'rpt_'* (reporting models), to distinguish them from upstream models. 
+  Given the limit number of transformations, tests are limited to:
+    * An *accepted_values* schema test on the *season* column to confirm that reporting models include games from the 2023 season only.
+    * A *unique* schema test on the combination of *season* and *game_id*, when data granularity is at the game level.
+
+
+
+# Other Conventions 
+* Staging models have been originally materialized as *tables* (data for seasons 2008 - 2022). They have been turned to *increamental* models, since 2023 games data.
+* Data models documentation is saved in a separate subfolder (*docs*) within the *models* directory and its structure mirrors the *marts* one to help the navigation. 
