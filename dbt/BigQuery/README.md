@@ -51,5 +51,7 @@ to avoid redundancy as the project scales up.
 
 
 # Other Conventions 
+
 * Staging models have been originally materialized as *tables* (data for seasons 2008 - 2022). They have been turned to *increamental* models, since 2023 games data.
+
 * Data models documentation is saved in a separate subfolder (*docs*) within the *models* directory and its structure mirrors the *marts* one to help the navigation. 
