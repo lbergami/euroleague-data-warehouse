@@ -3,6 +3,8 @@ version: 2
 models:
   - name: rpt_shot_locations
     description: Downstream model of the rpt_shot_locations, created for reporting purposes. Games are included from season 2023 onwards
+    docs:
+      node_color: "gold"
     columns:
       - name: season
         description: '{{ doc("season") }}'
