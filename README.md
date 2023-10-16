@@ -3,7 +3,7 @@ Drazen is an end-to-end project which generates a report for each Euroleague bas
 Data are scraped from three separate sources of the Euroleague website (play-by-play, box scores, and shot locations). The tools used are: Python, Google Storage & Bigquery, dbt, and Looker Studio.
 
 
-![GitHub Logo](img/game_report_dashboard.PNG)
+![GitHub Logo](img/Euroleague_game_report.PDF)
 
 
 
