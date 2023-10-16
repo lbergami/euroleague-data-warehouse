@@ -1,8 +1,9 @@
-# Description: Extract data for 2008 to 2022 seasons -------------------------
+# Description: Extract data for 2023 season -----------------------------------
 
 # 0. Prep work ----------------------------------------------------------------
 
 # Import libraries
+import gcsfs
 import pandas as pd
 from google.cloud import storage
 
@@ -14,55 +15,63 @@ bucket = client.bucket(PATH_TO_BUCKET)
 # Import functions to extract the data 
 from extract_functions  import extract_pbp_f, extract_box_scores_f, extract_shots_f
 
-# Import list of seasons and game Ids
-import init_euroleague_season_list
-lkpSeasons = init_euroleague_season_list.lkpSeasons
+# Create the lookup with season 2022-23 game ids 
+lkpSeason2223 = pd.DataFrame(
+            {'game_id': list(range(1, 331)),
+             'year_id': ['2022'] * 330, 
+             'season_id': ['2022-23'] * 330
+            }
+        )
+
+# Import df with max ids from previous extraction
+dfIds = pd.read_csv(PATH_TO_BUCKET + 'dfIds.csv',
+                 storage_options = {"token": PRIVATE_KEY})
 
 # 1. Play-by-play data --------------------------------------------------------
 
 # Extract pbp data 
-list_pbp_games =  extract_pbp_f(lkpSeason_arg = lkpSeasons)
+list_pbp_games =  extract_pbp_f(lkpSeason_arg = lkpSeason2223)
 
 # Combine the pbp data in one dataframe  
 dfPlayByPlay =  pd.concat(list_pbp_games[0], ignore_index = True)
 
 # Create a numeric id
-dfPlayByPlay["PLAY_BY_PLAY_ID"] = dfPlayByPlay.index + 1
+dfPlayByPlay["PLAY_BY_PLAY_ID"] = dfPlayByPlay.index + 1 + dfIds["PLAY_BY_PLAY_ID"].iloc[0]
 
 # Export pbp data in the google storage bucket 
-blob = bucket.blob(PATH_TO_BUCKET + '/dfPlayByPlay.csv')
+blob = bucket.blob(PATH_TO_BUCKET + '/season-23/dfPlayByPlay_23.csv')
 blob.upload_from_string(dfPlayByPlay.to_csv(index = False), 'text/csv', timeout = 900)
 
 
 # 2. Box-score data ----------------------------------------------------------- 
 
 # Extract box scores data
-list_box_scores_games =  extract_box_scores_f(lkpSeason_arg = lkpSeasons)
+list_box_scores_games =  extract_box_scores_f(lkpSeason_arg = lkpSeason2223)
 
 # Combine data in one dataframe 
 dfBoxScores =  pd.concat(list_box_scores_games[0], ignore_index = True)
 
 # Create a numeric id for the dataset
-dfBoxScores["BOX_SCORES_ID"] = dfBoxScores.index + 1
+dfBoxScores["BOX_SCORES_ID"] = dfBoxScores.index + 1 + dfIds["BOX_SCORES_ID"].iloc[0] 
 
 # Export the box scores data in the google storage bucket 
-blob = bucket.blob(PATH_TO_BUCKET + '/dfBoxScores.csv')
+blob = bucket.blob(PATH_TO_BUCKET + '/season-23/dfBoxScores_23.csv')
 blob.upload_from_string(dfBoxScores.to_csv(index = False), 'text/csv', timeout = 900)
 
 
 # 3. Shot data ---------------------------------------------------------------- 
 
 # Extract shots data 
-list_shots_games =  extract_shots_f(lkpSeason_arg = lkpSeasons)
+list_shots_games =  extract_shots_f(lkpSeason_arg = lkpSeason2223)
 
 # Create the dataset with play-by-play data 
 dfShots =  pd.concat(list_shots_games[0], ignore_index = True)
 
 # Create a numeric id for the dataset
-dfShots["SHOT_ID"] = dfShots.index + 1
+dfShots["SHOT_ID"] = dfShots.index + 1 + dfIds["SHOT_ID"].iloc[0]
 
 # Export shots data in the google storage bucket 
-blob = bucket.blob(PATH_TO_BUCKET + '/dfShots.csv')
+blob = bucket.blob(PATH_TO_BUCKET + '/season-23/dfShots_23.csv')
 blob.upload_from_string(dfShots.to_csv(index = False), 'text/csv', timeout = 900)
 
 # 4. Extract the Max ID from each table for future data extraction ------------
@@ -82,6 +91,3 @@ dfIds = dfPbPMaxId.merge(dfBsMaxId, how = 'left', on = ['SEASON', 'GAME_ID'])
 dfIds = dfIds.merge(dfShotsMaxId, how = 'left', on = ['SEASON', 'GAME_ID'])
 blob = bucket.blob('dfIds.csv')
 blob.upload_from_string(dfIds.to_csv(index = False), 'text/csv')
-
-
-
