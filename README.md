@@ -29,7 +29,7 @@ Data are scraped from three separate sources of the Euroleague website (play-by-
 
 ## Next steps 
 * Add 2023-2024 games as the current season progresses.
-* Add a data orchestration method (currently exploring dagster cloud)
+* Add a data orchestration method (currently exploring dagster).
 
 
 ## Sources 
@@ -40,5 +40,5 @@ Data are scraped from three separate sources of the Euroleague website (play-by-
 	* [82Games.com](https://www.82games.com/shotzones.htm)
 * The court chart is creating amending the *plotShotchart.R* function from the [eurolig](https://github.com/solmos/eurolig) *R* Package. Shot locations data are then rescaled following the same 
   calculations. 
-* The design of the dashboard took the work of Clement Recaud as reference
+* The design of the dashboard took the work of Clement Recaud as reference.
 
