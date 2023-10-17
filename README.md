@@ -36,7 +36,7 @@ Data are scraped from three separate sources of the Euroleague website (play-by-
 *  Game factors
 	* [Basketball Reference](https://www.basketball-reference.com/about/glossary.html)
 	* [Hack a stat](https://hackastat.eu/en/glossary/)
-*  Shooting Areas
+*  Shooting areas allocation
 	* [82Games.com](https://www.82games.com/shotzones.htm)
 * The court lines of the charts showing teams' shot locations are creating amending the *plotShotchart.R* function from the [eurolig](https://github.com/solmos/eurolig) *R* Package. Shot locations data are then rescaled following the same calculations. 
 * The design of the dashboard took the work of Clement Recaud as reference.
