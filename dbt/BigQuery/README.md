@@ -1,5 +1,7 @@
 # Coding Conventions 
 
+<p> <br>
+
 ## General 
 
 * Use lower case for all keywords.
@@ -7,7 +9,7 @@
 * Use consistent style in *group by* and *order by* (either names or numbers, not both).
 * Use SQLFluff's default linting rules to format *select* statements (models and tests).
 
-
+<p> <br>
 
 # Testing Conventions
 
@@ -48,7 +50,7 @@ to avoid redundancy as the project scales up.
     * An *accepted_values* schema test on the *season* column to confirm that reporting models include games from the 2023 season only.
     * A *unique* schema test on the combination of *season* and *game_id*, when data granularity is at the game level.
 
-
+<p> <br>
 
 # Other Conventions 
 
