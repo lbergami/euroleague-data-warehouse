@@ -35,7 +35,7 @@ Data are scraped from three separate sources of the Euroleague website (play-by-
 ## Sources 
 *  Data sources:
 	* [Euroleague Basketball](https://www.euroleaguebasketball.net/euroleague/)
-*  Game factors *formulae*:
+*  Game factors formulae:
 	* [Basketball Reference](https://www.basketball-reference.com/about/glossary.html)
 	* [Hack a stat](https://hackastat.eu/en/glossary/)
 *  Shooting areas allocation
