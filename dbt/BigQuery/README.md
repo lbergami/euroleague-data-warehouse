@@ -1,6 +1,6 @@
-# Coding Conventions 
+## Coding Conventions 
 
-## General 
+### General 
 
 * Use lower case for all keywords.
 * Use trailing commas in *select* statements.
@@ -9,12 +9,12 @@
 
 <p> <br>
 
-# Testing Conventions
+## Testing Conventions
 
 Setting the convensions listed below for staging and marts to ensure good test coverage and 
 to avoid redundancy as the project scales up.
 
-## Staging models 
+### Staging models 
 
 * The primary key source column must have *not_null* and *unique* schema tests.
 * All boolean columns must have an *accepted_values* schema test. The accepted values are true and false.
@@ -25,7 +25,7 @@ to avoid redundancy as the project scales up.
 * No other tests are required at the staging level since transformations are only limited to (i) renaming, (ii) type casting, and (iii) basic computations.
 * With the exception of the two schema test imposed on the primary keys, points above only applies to columns that are used in the downstream models
 
-## Data Marts
+### Data Marts
 
 * When a dim/fact has only one source, there is no need to perform schema or assertion tests on columns that 
   are not affected by the transformation, with the exception of the primary key column which have *not_null* and *unique* test.
@@ -50,7 +50,7 @@ to avoid redundancy as the project scales up.
 
 <p> <br>
 
-# Other Conventions 
+## Other Conventions 
 
 * The primary keys of the source data are created as last step of the extracting process, before loading the data into google storage buckets.
 
