@@ -1,7 +1,5 @@
 # Coding Conventions 
 
-<p> <br>
-
 ## General 
 
 * Use lower case for all keywords.
