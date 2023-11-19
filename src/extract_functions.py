@@ -28,7 +28,7 @@ def extract_pbp_f(lkpSeason_arg):
             "https://live.euroleague.net/api/PlaybyPlay?gamecode="
             + str(game_id)
             + "&seasoncode=E"
-            + year_id
+            + str(year_id)
         )
         url_request = requests.get(url)
 
@@ -255,7 +255,7 @@ def extract_box_scores_f(lkpSeason_arg):
             "https://live.euroleague.net/api/Boxscore?gamecode="
             + str(game_id)
             + "&seasoncode=E"
-            + year_id
+            + str(year_id)
         )
         url_request = requests.get(url)
 
@@ -335,7 +335,7 @@ def extract_shots_f(lkpSeason_arg):
             "https://live.euroleague.net/api/Points?gamecode="
             + str(game_id)
             + "&seasoncode=E"
-            + year_id
+            + str(year_id)
         )
         url_request = requests.get(url)
 
